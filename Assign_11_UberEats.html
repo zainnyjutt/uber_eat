@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/d526ae562360062f.ico">
+    
+    <title>Uber Eats | Food Delivery and Takeout</title>
+
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: UberMove, sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+        }
+        .top{
+           height: 650px;
+           width: 100%;
+            background-image: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/c413f20400e04805.webp") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        nav{
+            
+            height: 50px;
+            width: 100%;
+            padding: 10px;
+            padding-top: 20px;
+        }
+        .uelogo{
+            cursor: pointer;
+            display: inline;
+            margin: 15px 0 0 40px;
+            font-size: 20px;
+        }
+        .login{
+            display: inline;
+            float: right;
+            margin-right: 10px;
+            padding: 13px 20px ;
+            border: 1px solid rgb(12, 12, 12);
+            border-radius: 1000px;
+            background-color: white;
+            
+        }
+        .login:hover{
+            background-color: rgb(244, 243, 243);
+            
+            cursor: pointer;
+           
+        }
+        .submit{
+            display: inline;
+            float: right;
+            margin-right: 30px;
+            padding: 13px 20px ;
+            border: 1px solid rgb(12, 12, 12);
+            border-radius: 1000px;
+            background-color: black;
+            color: white;
+        }
+        .submit:hover{
+            background-color: rgb(14, 14, 14);
+            cursor: pointer;
+        }
+        
+        
+        .ordernear{
+            margin:200px 0 0 40px;
+            font-size: 52px;
+            font-weight: 700;
+
+        }
+        .address{
+            border: none;
+            width: 520px;
+            height: 50px;
+            margin: 30px 0 0 40px;
+            font-size: 20px;
+            padding-left: 30px;
+            color: black;
+        }
+        .address:focus{
+
+             outline: none;
+             padding-left: 30px;
+             border-bottom: 3px solid blue;
+        }
+        
+        .time{
+            border: none;
+            width: 210px;
+            height: 50px;
+            margin: 30px 0 0 5px;
+            font-size: 19px;
+            padding-left: 20px;
+            color: black;
+        }
+        .opt{
+            
+            padding: 100px;
+            border-radius: 20px;
+            height: 10px;  
+            font-size: 19px;
+            background-color: red;
+            outline: none;
+            border: 10px solid black;
+        } 
+        
+        .searchhere{
+            width: 120px;
+            height: 50px;
+            margin: 30px 0 0 5px;
+            font-size: 19px;
+            text-align: center;
+            color: white;
+            background-color: black;
+            border-radius: 10px;
+            border: none;
+            
+        }
+        .searchhere:hover{
+            background-color: rgb(19, 18, 18);
+            cursor: pointer;
+        }
+        .orsignin{
+            color: black;
+            padding-left: 40px;
+            line-height: 60px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .cards{
+            margin-top: 80px;
+            display: flex;
+        }
+        .eimg{
+            width: 422px;
+            height: 250px;
+        }
+        .etext{
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        .ea{
+            color: black;
+            font-size: 16px;
+            line-height: 30px
+        }
+        .ctext{
+            margin: 170px 0 0 40px;
+            font-size: 36px;
+            font-weight: 700;
+            float: left;
+        }
+        .cac{
+            margin-top: 190px;
+            float: right;
+            color: black;
+            margin-right: 40px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        .ul1{
+            float: left;
+            margin-left: 180px;
+            font-size: 17px;
+            text-decoration: none;
+        }
+        .ul1 a{
+            color: black;
+            text-decoration: none;
+            padding: 19px;
+        }
+        hr{
+            margin-top: 40px;
+            color: #000000;
+        }
+        .footer{
+            clear: both;
+        }
+        .ftext{
+            margin: 170px 0 0 40px;
+            font-size: 30px;
+            
+            float: left;
+        }
+        .ul2{
+            float: left;
+            margin-left: 180px;
+            font-size: 17px;
+            text-decoration: none;
+        }
+        .ul2 a{
+            color: black;
+            text-decoration:none;
+            padding: 10px;
+        }
+        .ul2 a:hover{
+            text-decoration: underline;
+        }
+        .fimg{
+            height: 45px;
+            width: 135px;
+            
+        }
+        .fimage{
+            margin: 230px 0 40px 40px;
+        }
+        .mediaicons{
+            margin-top: 40px;
+            margin-left: 40px;
+            padding-right: 20px;
+            
+        }
+        .mediaicons a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .prv{
+            float: right;
+            margin-right: 50px;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+        .prv:hover{
+            text-decoration: underline;
+        }
+        .mediaicons p a:hover{
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>  
+
+    <div class="top">
+        <nav>
+            <div class="uelogo"><i class="fa fa-bars"></i> &nbsp;&nbsp; Uber <strong>Eats</strong></div>  
+            <input type="submit" class="submit" value="Sign Up" />
+            <input type="button" class="login" value="Login" />
+        </nav>
+        
+        <div class="ordernear">Order delivery near you</div>
+        <input class="address" type="text" placeholder="Enter Delivery Address" />
+        <select name="time" class="time" id="me" >
+            <option class="opt" style="padding: 100px;">Deliever Now</option>
+            <option class="opt" style="padding: 100px;"> Schedule for later</option>
+        </select>
+        <input type="button" class="searchhere" value="Search here" />
+        <div ><a class="orsignin" href="#">Or Sign in</a></div>
+    </div>
+
+    <div class="cards">
+        <div class="employees" >
+            <img class="eimg" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/88d55f7112efe55f.webp" alt="Image Error" />
+            <div class="etext">Feed Your Employees</div>
+            <a class="ea" href="#">Create a business account</a>
+        </div>
+        <div class="restaurant" style="margin-left: 30px;">
+            <img class="eimg" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/711d51ca1b458931.webp" alt="Image Error" />
+            <div class="etext">Your restaurant, delivered</div>
+            <a class="ea" href="#">Add your restaurant</a>
+        </div>
+        <div class="driver" style="margin-left: 30px;" >
+            <img class="eimg" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/16522a701585873b.webp" alt="Image Error" />
+            <div class="etext">Deliver with Uber Eats</div>
+            <a class="ea" href="#">Signup to deliver</a>
+        </div>
+    </div>
+
+    <div class="cities">
+        <div class="ctext">Cities near me</div>
+        <a class="cac" href="#">View all 500+ cities</a>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d152971.5271042577!2d74.300910336989!3d31.496976885669444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurants!5e0!3m2!1sen!2s!4v1713194685815!5m2!1sen!2s" width="94%"  height="360" style=" margin:40px; border:0;" allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        <div class="ul1" style="margin-left: 40px; clear: both;">
+            <a style="display: block;" href="">Akron</a>
+            <a style="display: block;" href="">Albuquerque</a>
+            <a style="display: block;" href="">Bridgeport</a>
+            <a style="display: block;" href="">Concord</a>
+            <a style="display: block;" href="">Dayton</a>
+            <a style="display: block;" href="">El Paso</a>
+        </div>
+        <div class="ul1">
+            <a style="display: block;" href="">Hartford</a>
+            <a style="display: block;" href="">Houston</a>
+            <a style="display: block;" href="">Indianapolis</a>
+            <a style="display: block;" href="">McAllen</a>
+            <a style="display: block;" href="">Mesa</a>
+            <a style="display: block;" href="">Milwaukee</a>
+        </div>
+        <div class="ul1">
+            <a style="display: block;" href="">Nashville</a>
+            <a style="display: block;" href="">New Orleans</a>
+            <a style="display: block;" href="">Oklahoma City</a>
+            <a style="display: block;" href="">Omaha</a>
+            <a style="display: block;" href="">Orlando</a>
+            <a style="display: block;" href="">Palm Bay</a>
+        </div>
+        <div class="ul1">
+            <a style="display: block;" href="">Providence</a>
+            <a style="display: block;" href="">Queens</a>
+            <a style="display: block;" href="">San Antonio</a>
+            <a style="display: block;" href="">Stony Brook</a>
+            <a style="display: block;" href="">Tucson</a>
+            <a style="display: block;" href="">West Hollywood</a>
+        </div>
+
+        <div class="ctext" style="margin-top: 90px;">Countries with Uber Eats</div>
+        <a class="cac" href="#" style="margin-top: 115px;">View all countries</a>
+
+        <div class="ul1" style="margin-left: 40px; clear: both;">
+            <a style="display: block;" href="">Australia</a>
+            <a style="display: block;" href="">Belgium</a>
+            <a style="display: block;" href="">Canada</a>
+            <a style="display: block;" href="">Chile</a>
+            <a style="display: block;" href="">Costa Rica</a>
+            <a style="display: block;" href="">Dominican Republic</a>
+            <a style="display: block;" href="">Ecuador</a>
+            <a style="display: block;" href="">El Salvador</a>
+        </div>
+        <div class="ul1">
+            <a style="display: block;" href="">France</a>
+            <a style="display: block;" href="">Germany</a>
+            <a style="display: block;" href="">Guatemala</a>
+            <a style="display: block;" href="">Ireland</a>
+            <a style="display: block;" href="">Italy</a>
+            <a style="display: block;" href="">Japan</a>
+            <a style="display: block;" href="">Kenya</a>
+            <a style="display: block;" href="">Mexico</a>
+        </div>
+        <div class="ul1">
+            <a style="display: block;" href="">Netherlands</a>
+            <a style="display: block;" href="">New Zealand</a>
+            <a style="display: block;" href="">Panama</a>
+            <a style="display: block;" href="">Poland</a>
+            <a style="display: block;" href="">Portugal</a>
+            <a style="display: block;" href="">South Africa</a>
+            <a style="display: block;" href="">Spain</a>
+            <a style="display: block;" href="">Sri Lanka</a>
+        </div>
+        <div class="ul1">
+            <a style="display: block;" href="">Sweden</a>
+            <a style="display: block;" href="">Switzerland</a>
+            <a style="display: block;" href="">Taiwan (ROC)</a>
+            <a style="display: block;" href="">United Kingdom</a>
+            <a style="display: block;" href="">United States</a>
+        </div>
+    </div>
+
+    
+
+    <div class="footer">
+        <br>
+        <br>
+
+        <hr style=" border: 1px solid #f3f3f3;" >
+        <br>
+        <br>
+
+        <div class="ftext" style="margin-top: 60px;">Uber <strong>Eats</strong></div>
+        <div class="ul2" style="float: right; margin-top: 40px;  margin-right: 200px;"  >
+            <a style="display: block;" href="">Restaurants near me</a>
+            <a style="display: block;" href="">View all cities</a>
+            <a style="display: block;" href="">View all countries</a>
+            <a style="display: block;" href="">Pickup near me</a>
+            <a style="display: block;" href="">About Uber Eats</a>
+            <a style="display: block;" href=""><i class="fas fa-language"></i> &nbsp;English</a>
+        </div>
+        <div class="ul2" style="float: right; margin-top: 40px;">
+            <a style="display: block;" href="">Get Help</a>
+            <a style="display: block;" href="">Buy Gift Cards</a>
+            <a style="display: block;" href="">Add your restaurant</a>
+            <a style="display: block;" href="">Sign up to deliver</a>
+            <a style="display: block;" href="">Create a business account</a>
+            <a style="display: block;" href="">Promotions</a>
+        </div>
+
+
+        <div class="fimage">
+            <a href="#"><img class="fimg" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/783bb4a82e5be29e.svg" alt="Image Error"></a>
+            <a href="#"><img class="fimg" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/163bdc9b0f1e7c9e.png" alt="Image Error"></a>
+        </div>
+
+        
+        
+        <hr style="border: 1px solid #f3f3f3;">
+
+        
+        
+        <div class="mediaicons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+        <a href="#" class="prv">Do not sell or share my personal information</a>
+        <a href="#" class="prv">Pricing</a>
+        <a href="#" class="prv">Term</a>
+        <a href="#" class="prv">Privacy Policy</a>
+<div style="clear: both;"></div>
+        <p style="display: inline; float: right; font-size: 14px; margin-right: 60px; ">© 2024 Uber Technologies Inc</p>
+        <p style="display: inline; float: right; font-size: 14px;">This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service apply.</a></p>
+        
+        
+        
+        
+        </div>
+
+        
+        
+    </div>
+
+</body>
+</html>
